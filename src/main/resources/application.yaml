@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: task-manager-server
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/taskmanager-db'
+    username: postgres
+    password: datbeo09
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: '8080'
