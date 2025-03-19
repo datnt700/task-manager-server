@@ -23,7 +23,7 @@ public class BoardServiceImpl implements BoardService {
 
         BoardDTO boardDTO = new BoardDTO();
         boardDTO.setId(board.getId());
-
+        boardDTO.setName(board.getName());
         List<TaskDTO> taskDTOs = board.getTasks().stream() // Tạo một stream từ collection
                 .map(task -> { // chuyển đổi (mapping) dữ liệu từ đối tượng TaskEntity sang đối tượng TaskDTO
             TaskDTO taskDTO = new TaskDTO();
@@ -38,5 +38,19 @@ public class BoardServiceImpl implements BoardService {
 
         boardDTO.setTasks(taskDTOs);
         return boardDTO;
+    }
+
+    @Override
+    public List<BoardDTO> getAllBoard() {
+        List<BoardEntity> boards = boardRepository.findAll();
+        return boards.stream().map(board -> new BoardDTO(board.getId(),
+                board.getName(), board.getTasks().stream()
+                .map(task -> new TaskDTO(task.getId(),
+                        task.getTitle(), task.getStatus(),
+                        task.getBackground(),
+                        task.getTags().stream().map(TagEntity::getName)
+                                .collect(Collectors.toList())))
+                        .collect(Collectors.toList())))
+                .collect(Collectors.toList());
     }
 }

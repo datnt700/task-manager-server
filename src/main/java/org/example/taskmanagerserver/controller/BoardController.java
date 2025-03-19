@@ -7,6 +7,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/api/boards")
@@ -22,6 +24,11 @@ public class BoardController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
                     .body(null);
         }
+    }
 
+    @GetMapping("")
+    public ResponseEntity<List<BoardDTO>> getAllBoard(){
+        List<BoardDTO> boardDTOS = boardService.getAllBoard();
+        return ResponseEntity.status(HttpStatus.OK).body(boardDTOS);
     }
 }

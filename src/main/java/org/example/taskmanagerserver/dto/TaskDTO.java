@@ -1,8 +1,7 @@
 package org.example.taskmanagerserver.dto;
 
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+
 
 import java.util.List;
 
@@ -10,6 +9,7 @@ import java.util.List;
 @Setter
 @Getter
 @RequiredArgsConstructor
+@AllArgsConstructor
 public class TaskDTO {
     private Long id;
     private String title;
