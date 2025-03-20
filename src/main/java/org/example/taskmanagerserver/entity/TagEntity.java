@@ -1,11 +1,11 @@
 package org.example.taskmanagerserver.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.scheduling.config.Task;
 
 import java.util.List;
+
 
 @Getter
 @Setter
@@ -14,7 +14,7 @@ import java.util.List;
 public class TagEntity {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private long id;
 
     @Column(name="name")
