@@ -6,7 +6,9 @@ import lombok.*;
 
 import java.util.List;
 
-
+@Builder
+@RequiredArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @Entity
@@ -14,7 +16,7 @@ import java.util.List;
 public class TaskEntity {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
     private long id;
 
     @Column(name="title")

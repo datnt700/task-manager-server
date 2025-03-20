@@ -2,13 +2,11 @@ package org.example.taskmanagerserver.service;
 
 
 import org.example.taskmanagerserver.dto.BoardDTO;
-import org.example.taskmanagerserver.dto.TaskDTO;
 import org.example.taskmanagerserver.entity.BoardEntity;
 import org.example.taskmanagerserver.entity.TagEntity;
 import org.example.taskmanagerserver.entity.TaskEntity;
 import org.example.taskmanagerserver.repository.BoardRepository;
-import org.example.taskmanagerserver.repository.TaskRepository;
-import org.example.taskmanagerserver.service.Impl.BoardServiceImpl;
+import org.example.taskmanagerserver.service.impl.BoardServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -16,7 +14,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
